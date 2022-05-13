@@ -15,6 +15,7 @@
 *.recipe
 **/.vs/
 *.log
+*.enc
 
 # Precompiled Headers
 *.gch
