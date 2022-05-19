@@ -1,8 +1,5 @@
-
 #include <iostream>
-
-
-
+using namespace std;
 
 int main(int argc, char** argv)
 {
@@ -24,9 +21,16 @@ int main(int argc, char** argv)
 	//		b0, b1, b2, b3, b4,
 	//		c0, c1, c2, c3, c4,
 	// ------------------------------------------------------------------------
-
-
-
+	int i, j;
+	for (i = 0; i < ROWS; i++)
+	{
+		for (j = 0; j < COLS; j++)
+		{
+			cout << " " << grid2D[i][j] << " ";
+		}
+		cout << "\n";
+	}
+	
 
 	// ------------------------------------------------------------------------
 
@@ -45,12 +49,15 @@ int main(int argc, char** argv)
 	for (int index = 0; index < ROWS * COLS; index++)
 	{
 		// TODO: convert "index" to a "rowIndex" and "colIndex" value
-		int rowIndex = 0;
-		int colIndex = 0;
+		int rowIndex = index / COLS;
+		int colIndex = index % COLS;
 
 		// use the resulting row and column index to print the value
 		std::cout << grid2D[rowIndex][colIndex] << ", ";
+
+		
 	}
+	cout << endl;
 
 	// ------------------------------------------------------------------------
 
@@ -77,7 +84,7 @@ int main(int argc, char** argv)
 		for (int colIndex = 0; colIndex < COLS; colIndex++)
 		{
 			// TODO: calculate "index" based on rowIndex/colIndex value
-			int index = 0; 
+			int index = rowIndex * COLS + colIndex; 
 
 			// use the resulting index to print the value
 			std::cout << grid1D[index] << ", ";

@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+using namespace std;
 
 const int* BinarySearch(const int* arr, int count, int searchVal);
 void TestResult(const int* result, int* const expected);
@@ -45,6 +46,25 @@ const int* BinarySearch(const int* arr, int count, int searchVal)
 	// This method should:
 	//	- Return: nullptr if the value is not found
 	//  - Return: pointer to the found value in the array
+	int start = 0;
+	int end = count - 1; 
+	while (start <= end)
+	{
+		int pivot = (start + end) / 2;
+
+		if (arr[pivot] == searchVal)
+			return &arr[pivot];
+		if (arr[pivot] < searchVal)
+		{
+			start = pivot + 1;
+		}
+		else
+		{
+			end = pivot - 1;
+		}
+
+		
+	}
 	
 	return nullptr;
 }
