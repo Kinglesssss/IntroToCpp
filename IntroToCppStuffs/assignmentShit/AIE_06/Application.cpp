@@ -57,17 +57,17 @@ void Application::Update(float deltaTime)
 
 		// Task 3:
 		// TODO: Calculate row and col index based on the mouse positon
-		int rowIndex = MOUSE_LEFT_BUTTON / COLS; 
-		int colIndex = MOUSE_LEFT_BUTTON % COLS;
+		int rowIndex = mousePos.y / m_tileWidth;
+		int colIndex = mousePos.x / m_tileHeight;
 
 		// TODO: calculate the index of the tile clicked on based on the row/col index
-		int tileIndex = 0;
+		int tileIndex = rowIndex * COLS + colIndex;
 
 		m_tiles[tileIndex] += 1;
 		if (m_tiles[tileIndex] >= 5)
 			m_tiles[tileIndex] = 0;
 
-		m_tiles[tileIndex] = rowIndex * COLS + colIndex;
+		
 	}
 }
 
@@ -92,8 +92,8 @@ void Application::Draw()
 		{
 			float xPos = j * m_tileWidth;
 			float yPos = i * m_tileHeight;
-			int index = i * COLS + j;
-			Color color = GetTileColor(m_tiles[index]); // pass in the tilevalue
+			//int index = i * COLS + j;
+			Color color = GetTileColor(m_tiles[i * COLS + j]); // pass in the tilevalue
 			
 
 			DrawRectangle(xPos, yPos, m_tileWidth, m_tileHeight, color);
