@@ -58,7 +58,10 @@ int main(int argc, char* argv[])
             {
                 currentRecordIdx = data.GetRecordCount()-1;
             }
+            UnloadImage(currentRecord->image);
+            delete currentRecord;
             currentRecord = data.GetRecord(currentRecordIdx, "npc_data.dat");
+            UnloadTexture(recordTexture);
             recordTexture = LoadTextureFromImage(currentRecord->image);
         }
 
@@ -69,7 +72,10 @@ int main(int argc, char* argv[])
             {
                 currentRecordIdx = 0;
             }
+            UnloadImage(currentRecord->image);
+            delete currentRecord;
             currentRecord = data.GetRecord(currentRecordIdx, "npc_data.dat");
+            UnloadTexture(recordTexture);
             recordTexture = LoadTextureFromImage(currentRecord->image);
         }
 
