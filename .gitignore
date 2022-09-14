@@ -9,6 +9,8 @@
 
 #Visual Studio temporary files
 *.pdb
+*.iobj
+*.pdb
 *.idb
 *.ilk
 *.tlog/
