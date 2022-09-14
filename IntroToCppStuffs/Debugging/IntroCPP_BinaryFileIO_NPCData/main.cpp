@@ -51,6 +51,7 @@ int main(int argc, char* argv[])
         // TODO: Update your variables here
         //----------------------------------------------------------------------------------
         //scroll through the npc profiles
+
         if (IsKeyPressed(KEY_LEFT))
         {
             currentRecordIdx--;
@@ -78,7 +79,6 @@ int main(int argc, char* argv[])
             UnloadTexture(recordTexture);
             recordTexture = LoadTextureFromImage(currentRecord->image);
         }
-
 
         // Draw
         //----------------------------------------------------------------------------------

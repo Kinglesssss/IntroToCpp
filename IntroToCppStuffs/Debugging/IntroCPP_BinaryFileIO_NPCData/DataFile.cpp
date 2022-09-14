@@ -57,7 +57,6 @@ DataFile::Record* DataFile::GetRecord(int index, string filename)
 	r->image = img;
 	r->name = string(name);
 	r->age = age;
-	
 
 	delete[] imgdata;
 	delete[] name;
