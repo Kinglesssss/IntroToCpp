@@ -10,7 +10,7 @@
 #Visual Studio temporary files
 *.pdb
 *.iobj
-*.pdb
+*.ipdb
 *.idb
 *.ilk
 *.tlog/
